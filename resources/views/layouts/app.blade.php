@@ -87,8 +87,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2 bg-light vh-100 p-5">
-                    <a href="" class="btn btn-light border">Home</a>
+                    <a href="{{ route('admin.dashboard') }}" class="btn btn-light border">Home</a>
                     <a href="{{ route('admin.project.index') }}" class="btn btn-light border">Visualizza progetti</a>
+                    <a href="{{ route('admin.types.index') }}" class="btn btn-light border">Visualizza le tipologie</a>
                 </div>
                 <div class="col-10">
                     <main class="">
