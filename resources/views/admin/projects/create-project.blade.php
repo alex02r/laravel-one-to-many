@@ -33,6 +33,9 @@
                             <label for="description" class="form-label">Inserisci La descrizione:</label>
                             <textarea name="description" id="description" class="form-control"></textarea>
                         </div>
+                        <div class="mb-3 w-25">
+                            
+                        </div>
                         <div class="d-flex gap-4 mb-3">
                             <div class="">
                                 <label for="start_date">Inserisci data inizio</label>
@@ -41,6 +44,15 @@
                             <div class="">
                                 <label for="end_date">Inserisci data fine</label>
                                 <input type="date" class="form-control" name="end_date" id="end_date">
+                            </div>
+                            <div class="">
+                                <label for="type_id" >Seleziona il tipo:</label>
+                                <select name="type_id" id="type_id" class="form-select">
+                                    <option value="">Nessun tipo</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{$type->id}}">{{$type->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success">Crea</button>
