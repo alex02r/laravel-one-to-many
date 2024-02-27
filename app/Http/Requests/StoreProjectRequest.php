@@ -26,6 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'name'=>'required',
             'description'=>'required',
+            'type_id'=>'exists:types,id',
             'start_date'=>'required',
             'img'=>'file|image'
         ];
@@ -34,6 +35,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'name' => 'Il Nome del progetto deve essere obbligatorio',
             'description' => 'La descrizione del progetto deve essere obbligatoria',
+            'type_id'=> 'La categoria è categoria inesistente',
             'start_date' => 'La data di inizio del progetto deve essere obbligatoria',
             'img.file'=>'Non hai inserito un file nel caricamento dell\'immagine',
             'img.image'=>'Non hai inserito un estenzione valida per l\'immagine (.jpg, .png, .gif, .jpeg ...)'
