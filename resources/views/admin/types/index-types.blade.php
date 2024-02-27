@@ -24,7 +24,7 @@
                             <td>{{ $type->name }}</td>
                             <td></td>
                             <td>
-                                <a href="" class="btn btn-sm btn-primary">Show</a>
+                                <a href="{{ route('admin.types.show', ['type'=>$type->id]) }}" class="btn btn-sm btn-primary">Show</a>
                                 <a href="" class="btn btn-sm btn-warning">Edit</a>
                                 <a href="" class="btn btn-sm btn-danger">Elimina</a>
                             </td>
