@@ -79,7 +79,12 @@ class TypeController extends Controller
      */
     public function update(UpdateTypeRequest $request, Type $type)
     {
-        //
+        $form_data = $request->all();
+        $type->fill($form_data);
+        $type->slug = Str::slug($form_data['name'], '-');
+        $type->save();
+
+        return redirect()->route('admin.types.index');
     }
 
     /**
