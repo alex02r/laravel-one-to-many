@@ -23,10 +23,14 @@
                         <tr>
                             <td>{{ $type->name }}</td>
                             <td></td>
-                            <td>
+                            <td class="d-flex gap-3">
                                 <a href="{{ route('admin.types.show', ['type'=>$type->id]) }}" class="btn btn-sm btn-primary">Show</a>
                                 <a href="{{ route('admin.types.edit', ['type'=>$type->id]) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="" class="btn btn-sm btn-danger">Elimina</a>
+                                <form action="{{ route('admin.types.destroy', ['type'=>$type]) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare questo project')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Elimina</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
