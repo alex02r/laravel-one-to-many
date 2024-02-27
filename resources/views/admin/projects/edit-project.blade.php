@@ -37,6 +37,14 @@
                                 <label for="end_date">Modifica data fine</label>
                                 <input type="date" class="form-control" name="end_date" id="end_date" value="{{ old('end_date') ?? $project['end_date'] }}">
                             </div>
+                            <div class="">
+                                <label for="type_id" >Modifica il tipo:</label>
+                                <select name="type_id" id="type_id" class="form-select">
+                                    @foreach ($types as $type)
+                                        <option value="{{$type->id}}" @selected( $type->id == old('type_id', $project->type_id ? $project->type_id : ''))>{{$type->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-success">Salva</button>
                     </form>
