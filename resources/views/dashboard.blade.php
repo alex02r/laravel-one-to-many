@@ -18,9 +18,6 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <div>
-                        <a href="{{ route('admin.project.index') }}" class="btn btn-success">Visualizza progetti</a>
-                    </div>
                 </div>
             </div>
         </div>
