@@ -14,11 +14,12 @@
                             </form>
                         </div>
                     </div>
-                        <img class="card-img-start-fluid p-3 w-25" src="{{ $project->img !== null ? asset('storage/'. $project->img) : 'https://cdn-icons-png.flaticon.com/512/3767/3767084.png' }}" alt="folder">
-                        <div class="card-body">
-                          <h5 class="card-title">{{ $project->name}}</h5>
-                          <p class="card-text">Slug: {{ $project->slug}}</p>
-                          <p class="card-text">{{ $project->description}}</p>
+                    <img class="card-img-start-fluid p-3 w-25" src="{{ $project->img !== null ? asset('storage/'. $project->img) : 'https://cdn-icons-png.flaticon.com/512/3767/3767084.png' }}" alt="folder">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $project->name}}</h5>
+                        <p class="card-text">Slug: {{ $project->slug}}</p>
+                        <p class="card-text">{{ $project->description}}</p>
+                        <p class="card-text">Tipologia Associata: {{ $project->type ? $project->type->name : 'Nessun tipo'}}</p>
                           <div class="text-secondary">Data Creazione: {{ $project->start_date }}</div>
                           <div class="text-secondary">Data Fine: {{ $project->end_date }}</div>
                         </div>
