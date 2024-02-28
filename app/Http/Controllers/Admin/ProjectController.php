@@ -92,6 +92,11 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $form_data = $request->all();
+        $id = Project::where('name', 'LIKE', $form_data['name'])->where('id', '!=', $project->id)->get();
+        if (count($id) > 0) {
+            $error_message = 'Hai inserito un titolo già presente in un altro articolo';
+            return redirect()->route('admin.project.edit', compact('project', 'error_message'));
+        }
 
         if ($request->hasFile('img')) {
             $img_path = Storage::disk('public')->put('uploads', $form_data['img']);
